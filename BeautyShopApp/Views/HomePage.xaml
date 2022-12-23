@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="BeautyShopApp.Views.HomePage"
+    Title="BeautyShop App"
+    BackgroundColor="{StaticResource PageBackgroundColor}"
+    Shell.NavBarIsVisible="False"
+    >
+    <Grid
+        BackgroundColor="{StaticResource PageBackgroundColor}"
+        RowDefinitions="100, 60, *">
+        <Grid
+            ColumnDefinitions="Auto, *"
+            Style="{StaticResource SectionContainerStyle}">
+            <Label
+                Text="Найти продукт"
+                Style="{StaticResource TitleTextStyle}"
+                Grid.ColumnSpan="2"/>
+            <Frame 
+                Style="{StaticResource ProfilePictureContainerStyle}"
+                Grid.Column="1"
+                >
+                <Image
+                    Source="admin.jfif"/>
+            </Frame>
+        </Grid>
+
+        <Grid
+            Grid.Row="1"
+            ColumnDefinitions="*, Auto"
+            Style="{StaticResource SectionContainerStyle}">
+            <Frame
+                Style="{StaticResource SearchContainerStyle}">
+                <SearchBar
+                    Style="{StaticResource SearchBarStyle}"
+                    Placeholder="Моющие средства"/>
+            </Frame>
+            <Frame
+                Grid.Column="1"
+                Style="{StaticResource FilterContainerStyle}">
+                <Image 
+                    Source="slider.png"
+                    Style="{StaticResource FilterImageStyle}"/>
+            </Frame>
+        </Grid>
+
+        <ScrollView
+            Grid.Row="2">
+            <StackLayout
+                BindableLayout.ItemsSource="{Binding Products}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

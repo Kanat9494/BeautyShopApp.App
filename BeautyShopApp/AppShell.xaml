@@ -3,12 +3,13 @@
     x:Class="BeautyShopApp.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:BeautyShopApp"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:local="clr-namespace:BeautyShopApp.Views"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.BackgroundColor="{StaticResource PageBackgroundColor}">
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
+        ContentTemplate="{DataTemplate local:HomePage}"
         Route="MainPage" />
 
 </Shell>

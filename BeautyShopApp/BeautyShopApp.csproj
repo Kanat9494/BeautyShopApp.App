@@ -49,7 +49,39 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\fallingsky.otf" />
+	  <None Remove="Resources\Fonts\fallingskybd.otf" />
+	  <None Remove="Resources\Fonts\fallingskylight.otf" />
+	  <None Remove="Resources\Images\admin.jfif" />
+	  <None Remove="Resources\Images\cleansing_oil_01.jpg" />
+	  <None Remove="Resources\Images\cleansing_oil_02.jpg" />
+	  <None Remove="Resources\Images\cleansing_oil_03.jpg" />
+	  <None Remove="Resources\Images\facial_cleanser_01.jpg" />
+	  <None Remove="Resources\Images\facial_cleanser_02.jpg" />
+	  <None Remove="Resources\Images\facial_cleanser_03.jpg" />
+	  <None Remove="Resources\Images\micellar_01.jpg" />
+	  <None Remove="Resources\Images\micellar_02.jpg" />
+	  <None Remove="Resources\Images\micellar_03.jpg" />
+	  <None Remove="Resources\Images\moisturiser_01.jpg" />
+	  <None Remove="Resources\Images\moisturiser_02.jpg" />
+	  <None Remove="Resources\Images\moisturiser_03.jpg" />
+	  <None Remove="Resources\Images\shampoo_01.jpg" />
+	  <None Remove="Resources\Images\shampoo_02.jpg" />
+	  <None Remove="Resources\Images\slider.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\HomePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="ViewControls\" />
 	</ItemGroup>
 
 </Project>
