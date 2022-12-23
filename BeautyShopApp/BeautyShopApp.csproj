@@ -59,6 +59,7 @@
 	  <None Remove="Resources\Images\facial_cleanser_01.jpg" />
 	  <None Remove="Resources\Images\facial_cleanser_02.jpg" />
 	  <None Remove="Resources\Images\facial_cleanser_03.jpg" />
+	  <None Remove="Resources\Images\heart.png" />
 	  <None Remove="Resources\Images\micellar_01.jpg" />
 	  <None Remove="Resources\Images\micellar_02.jpg" />
 	  <None Remove="Resources\Images\micellar_03.jpg" />
@@ -75,13 +76,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="ViewControls\ProductItemControl.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\HomePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="ViewControls\" />
 	</ItemGroup>
 
 </Project>

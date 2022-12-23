@@ -5,6 +5,7 @@
     x:Class="BeautyShopApp.Views.HomePage"
     Title="BeautyShop App"
     BackgroundColor="{StaticResource PageBackgroundColor}"
+    xmlns:viewControl="clr-namespace:BeautyShopApp.ViewControls"
     Shell.NavBarIsVisible="False"
     >
     <Grid
@@ -51,7 +52,7 @@
                 BindableLayout.ItemsSource="{Binding Products}">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
-                        
+                        <viewControl:ProductItemControl/>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </StackLayout>

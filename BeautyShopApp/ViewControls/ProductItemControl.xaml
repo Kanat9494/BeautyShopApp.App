@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BeautyShopApp.ViewControls.ProductItemControl">
+    <Frame
+        Style="{StaticResource ProductContainerStyle}">
+        <Grid
+            RowDefinitions="*, Auto, Auto">
+            <Image 
+                Source="{Binding Image}"
+                Style="{StaticResource ProductImageStyle}"/>
+            <StackLayout
+                Grid.Row="1">
+                <Label 
+                    Text="{Binding Name}"
+                    Style="{StaticResource ProductNameTextStyle}"/>
+                <Label 
+                    Text="{Binding Description}"
+                    Style="{StaticResource ProductDescriptionTextStyle}"/>
+            </StackLayout>
+
+            <Grid
+                Grid.Row="2"
+                ColumnDefinitions="*, Auto">
+                <Label
+                    Text="{Binding Price, StringFormat='$ {0:F2}'}"
+                    Style="{StaticResource ProductPriceTextStyle}"/>
+
+                <Frame
+                    Grid.Column="1"
+                    Style="{StaticResource ProductRatingContainerStyle}">
+                    <Image 
+                        Source="heart.png"
+                        />
+                </Frame>
+            </Grid>
+        </Grid>
+    </Frame>
+</ContentView>
