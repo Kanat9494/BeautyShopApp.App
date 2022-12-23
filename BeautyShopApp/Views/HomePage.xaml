@@ -6,8 +6,26 @@
     Title="BeautyShop App"
     BackgroundColor="{StaticResource PageBackgroundColor}"
     xmlns:viewControl="clr-namespace:BeautyShopApp.ViewControls"
+    xmlns:control="clr-namespace:BeautyShopApp.Controls"
     Shell.NavBarIsVisible="False"
     >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="ProductItemControl">
+                <viewControl:ProductItemControl/>
+            </DataTemplate>
+
+            <DataTemplate x:Key="ResultItemControl">
+                <viewControl:ResultItemControl/>
+            </DataTemplate>
+
+            <viewControl:ProductItemTemplateSelector
+                x:Key="ProductItemTemplateSelector"
+                ProductItemTemplate="{StaticResource ProductItemControl}"
+                ResultItemTemplate="{StaticResource ResultItemControl}"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <Grid
         BackgroundColor="{StaticResource PageBackgroundColor}"
         RowDefinitions="100, 60, *">
@@ -47,15 +65,16 @@
         </Grid>
 
         <ScrollView
-            Grid.Row="2">
-            <StackLayout
-                BindableLayout.ItemsSource="{Binding Products}">
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate>
-                        <viewControl:ProductItemControl/>
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </StackLayout>
+            Grid.Row="2"
+            Style="{StaticResource ProductListContainerStyle}">
+            <control:VariableSizedWrapGrid
+                MaximumRowsOrColumns="2"
+                ItemWidth="160"
+                ItemHeight="100"
+                Orientation="Horizontal"
+                HorizontalOptions="Center"
+                BindableLayout.ItemsSource="{Binding Products}"
+                BindableLayout.ItemTemplateSelector="{StaticResource ProductItemTemplateSelector}"/>
         </ScrollView>
     </Grid>
 </ContentPage>
